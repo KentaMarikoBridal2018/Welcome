@@ -21,21 +21,8 @@
 </div>
 
 <div class="operation">
-<b>チャットボット指定:</b>
-<select id="domain-id" name="domain-id">
-	<option value="fujitsudemo01">デモ環境01</option>
-	<option value="fujitsudemo02">デモ環境02</option>
-	<option value="fujitsudemo03">デモ環境03</option>
-	<option value="fujitsudemo04">デモ環境04</option>
-	<option value="fujitsudemo05">デモ環境05</option>
-	<option value="fujitsudemo06">デモ環境06</option>
-	<option value="fujitsudemo07">デモ環境07</option>
-	<option value="fujitsudemo08">デモ環境08</option>
-	<option value="fujitsudemo09">デモ環境09</option>
-	<option value="fujitsudemo10">デモ環境10</option>
-</select>
-<input type="button" onclick="return startChat();" value="チャット開始">
 
+<input type="button" onclick="return startChat();" value="チャット開始">
 
 </div>
 <div class="eyecatch">
@@ -188,7 +175,7 @@
 		
 	    MobiAgentClient.init(
     		'https://agent.chordship.global.fujitsu.com', // server url
-    		domainId,
+    		fujitsudemo02,
 			{
 		        useMarkDownSyntax: true,
 		        allowFileUpload: true,
