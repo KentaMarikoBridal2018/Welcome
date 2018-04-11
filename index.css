@@ -1,0 +1,66 @@
+/*---------------- Initialize font-size  ----------------*/
+body.double {
+    font-size: 81.25%; /* 13px */
+    font-family: Arial, Verdana, "Lucida Grande", sans-serif;
+    color:#000000;
+}
+
+html[lang='\ja'] body.double { font-family: Arial, Verdana, "Lucida Grande",'ＭＳ Ｐゴシック', "ヒラギノ角ゴ Pro W3", sans-serif;}
+html[lang='\zh-CN'] body.double { font-family: Arial, Verdana, "Lucida Grande", "宋体", SimSun, "华文细黑", STXihei, Simhei, “黑体”, sans-serif;}
+@media screen and (min-width:0\0)  
+{
+    html[lang='\zh-CN'] body.double { letter-spacing: 0.55px;}
+    
+    
+    html[lang='\zh-TW'] body.double { font-family: Arial, PMing LiU, "新細明體", Verdana, "Lucida Grande",sans-serif;}
+    html[lang='\zh-HK'] body.double { font-family: Arial, PMing LiU, "新細明體", Verdana, "Lucida Grande", sans-serif;}
+    
+}
+
+
+body.double h1 {
+    font-size: 100.0%;
+    font-family: FujitsuSans, Arial, Verdana, "Lucida Grande", メイリオ, Meiryo, "ＭＳ Ｐゴシック", "ヒラギノ角ゴ Pro W3", sans-serif;
+}
+
+
+
+.eyecatch {
+  background: #f4f0eb;
+}
+
+.nav {
+  position: absolute;
+  width: 100%;
+  background: rgba(0, 0, 0, .7);
+  z-index: 99;
+}
+.nav ul {
+  display: table;
+  width: 100%;
+  /*width: 600px;*/
+  margin: 10px auto !important;
+  padding-left: 0;
+  list-style: none;
+  border-left: 1px solid #fff;
+}
+.nav li {
+  display: table-cell;
+  min-width: 5em;
+  border-right: 1px solid #fff;
+}
+.nav a {
+  display: block;
+  text-align: center;
+  text-decoration: none !important;
+  color: #fff !important;
+}
+
+.operation, .contents {
+  margin-top: 60px;
+  margin-left: 20px;
+}
+
+.contents {
+    max-width: 600px;
+}
