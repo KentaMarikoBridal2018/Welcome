@@ -138,7 +138,7 @@
 	        $('#close_btn').css('display', 'block');
 	      }, 500);
 	      // バナーを閉じる
-	      $('#mobileBanner').fadeOut('normal');
+	      //$('#mobileBanner').fadeOut('normal');
     };
     
     // チャット画面を隠す処理
@@ -172,7 +172,7 @@
 		$('#welcome').css({
 		    'visibility': 'hidden',
 		});
-		startChat;
+		startChat();
 	});
 
 	var startChat = function() {
