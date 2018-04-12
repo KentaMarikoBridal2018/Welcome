@@ -153,7 +153,7 @@
 	      // バナーを閉じる
 	      //$('#mobileBanner').fadeOut('normal');
 		 
-		MobiAgentClient.toggle(true);
+		
     };
     
     // チャット画面を隠す処理
@@ -254,6 +254,7 @@
 	// チャット小窓のOpen時の処理
 	// 初めに１チャット送信しないと、カテゴリ選択が表示されないため
 	MobiAgentClient.on('openFrame', function(data2){
+		MobiAgentClient.toggle(true);
       	showChatWindow();
       	// 初回Open時に送るメッセージ
       	if(hasRoom == false || (hasRoom == true && sendMsg == false)){
