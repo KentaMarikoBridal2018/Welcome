@@ -153,14 +153,14 @@
 		queue: false,
 		complete: function() { // コールバック
 		  $('#konnect-container').css({
-		    'visibility': 'visible',
+		    'visibility': 'hidden',
 		    'top': 'auto',
 		    //'top': '200px',
 		    //'bottom': '-' + $('#konnect-container').height() + 'px'
 		    'bottom': '0px'
 		  });
 		  // バナー表示
-		  //$('#mobileBanner').fadeIn('slow');
+		  $('#mobileBanner').fadeIn('slow');
 		}
 		});
     };
