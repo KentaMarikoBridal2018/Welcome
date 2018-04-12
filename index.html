@@ -141,7 +141,7 @@
 	     $('#konnect-container').css({
 	        'visibility': 'visible',
 	        'opacity': '1.0',
-	        'top': '',
+	        'top': 'auto',
 	        'bottom': ''
 	      });
 	      // 下部ボタンの制御
@@ -232,7 +232,7 @@
     var hasRoom = false; // ルームがすでに存在するかどうか
     var sendMsg = false; // 初回メッセージが送信されたかどうか
     // 小窓画面ロード時に呼ばれるイベント
-    MobiAgentClient.on('sdkReady', function(data){
+    /*MobiAgentClient.on('sdkReady', function(data){
       MobiAgentClient.on('roomReady', function(data){});
       // 小窓のみリロードする場合
       if(hasRoom && sendMsg){
@@ -248,7 +248,7 @@
         hasRoom = true;
         sendMsg = false;
       }
-    });
+    });*/
 		
 	
 	// チャット小窓のOpen時の処理
