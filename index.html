@@ -223,7 +223,7 @@
 			      closeSessionAndInitMobi();
 			    });
 				
-				MobiAgentClient.toggle(true);
+				
 			    
 			});
 			
@@ -234,11 +234,14 @@
     var hasRoom = false; // ルームがすでに存在するかどうか
     var sendMsg = false; // 初回メッセージが送信されたかどうか
     // 小窓画面ロード時に呼ばれるイベント
-    /*MobiAgentClient.on('sdkReady', function(data){
-      MobiAgentClient.on('roomReady', function(data){});
+    MobiAgentClient.on('sdkReady', function(data){
+      MobiAgentClient.on('roomReady', function(data){
+      	MobiAgentClient.toggle(true);
+      });
+	    
       // 小窓のみリロードする場合
       if(hasRoom && sendMsg){
-      	showChatWindow()
+      	//showChatWindow()
         hasRoom = false;
         sendMsg = false;
       }
@@ -250,7 +253,7 @@
         hasRoom = true;
         sendMsg = false;
       }
-    });*/
+    });
 		
 	
 	// チャット小窓のOpen時の処理
