@@ -275,6 +275,10 @@
 		 // チャット小窓のClose時の処理
 	MobiAgentClient.on('closeFrame', function(data2){
   		hideChatWindow();
+		
+		$('#welcome').css({
+		    'visibility': 'visible',
+		});
 	});
 	
 	/*
