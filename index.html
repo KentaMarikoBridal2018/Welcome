@@ -147,20 +147,20 @@
 		$('#close_btn').css('display', 'none');
 		// 小窓の制御
 		$('#konnect-container').animate({
-		//'opacity': '0'
+		'opacity': '0'
 		},{
 		duration: 500,
 		queue: false,
 		complete: function() { // コールバック
 		  $('#konnect-container').css({
 		    'visibility': 'hidden',
-		    'top': '300px',
+		    'top': 'auto',
 		    //'top': '200px',
 		    //'bottom': '-' + $('#konnect-container').height() + 'px'
-		    'bottom': '0px'
+		    'bottom': ''
 		  });
 		  // バナー表示
-		  $('#mobileBanner').fadeIn('slow');
+		  $('#mobileBanner').fadeIn('normal');
 		}
 		});
     };
