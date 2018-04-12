@@ -137,9 +137,6 @@
 
 	
 <script>
-	function(){
-		startChat();
-	}
 	
 	 function showChatWindow() {
 	      // 小窓の制御
@@ -192,8 +189,8 @@
 		$('#welcome').css({
 		    'visibility': 'hidden',
 		});
-		//startChat();
-		MobiAgentClient.toggle(true);
+		startChat();
+		//MobiAgentClient.toggle(true);
 	});
 
 	var startChat = function() {
