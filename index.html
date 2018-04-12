@@ -137,6 +137,8 @@
 
 	
 <script>
+	startChat();
+	
 	 function showChatWindow() {
 	      // 小窓の制御
 	     $('#konnect-container').css({
@@ -188,7 +190,8 @@
 		$('#welcome').css({
 		    'visibility': 'hidden',
 		});
-		startChat();
+		//startChat();
+		MobiAgentClient.toggle(true);
 	});
 
 	var startChat = function() {
@@ -237,7 +240,7 @@
     // 小窓画面ロード時に呼ばれるイベント
     MobiAgentClient.on('sdkReady', function(data){
       MobiAgentClient.on('roomReady', function(data){
-      	MobiAgentClient.toggle(true);
+      	//MobiAgentClient.toggle(true);
       });
 	    
       // 小窓のみリロードする場合
