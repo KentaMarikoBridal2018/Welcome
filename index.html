@@ -54,7 +54,7 @@
       top: auto; // !important無指定 
       right: 5px;
       bottom: 40px; // !important無指定  
-      
+      max-width: 498px!important; /* 横幅500から左右border分2pxマイナス */
       max-height: calc(100% - 40px - 20px)!important; // 画面高さ - 下部ボタン高さ - 画面上部との余白
     }
     
@@ -94,7 +94,7 @@
       right: 5px;
       bottom: 0px;
       z-index: 99998; /* div#konnect-containerに設定されている値と同じ値を指定 */
-	width: 100%!important; /* 横幅500から左右border分2pxマイナス */
+	width: calc(100%-2px)!important; /* 横幅500から左右border分2pxマイナス */
       max-width: 498px!important; /* 横幅500から左右border分2pxマイナス */
       height: 40px;
       border: 1px solid #DDDDDD;
