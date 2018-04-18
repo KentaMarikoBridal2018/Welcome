@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="utf-8" />
+    <title>カウンタテスト</title>
+</head>
+<body>
+	<script type="text/javascript">
+		const url = "https://s3.us-east-2.amazonaws.com/kentamarikobridal2018/Count/counter.txt";
+		let xhr = new XMLHttpRequest();
+
+		xhr.open('GET',url,true);
+		const p = new Promise((resolve, reject) => {
+			xhr.onreadystatechange = () => {
+				if (xhr.readyState != XMLHttpRequest.DONE) return;
+				if (xhr.status >= 400) return reject({message: `Failed with ${xhr.status}:${xhr.statusText}`});
+				resolve(JSON.parse(xhr.responseText));
+				textData=JSON.parse(xhr.responseText);
+
+				console.log(textData)
+				console.log(textData.responses[0].name)
+
+
+				textData.responses[0].textAnnotations.forEach(function(value){
+					if(value.description.match(regSerialNo)){
+						console.log(value.description);
+						document.querySelector('#SerialNo').innerHTML=value.description.toString();
+					};
+					
+					if(value.description.match(regKatamei)){
+						console.log(value.description);
+						document.querySelector('#Katamei').innerHTML = value.description.toString();
+					};
+				});
+
+
+			};
+		})
+		xhr.send(null);
+		//return p;
+	</script>
+</body>
+</html>
