@@ -7,11 +7,11 @@ var mobi_domain_id = "";
 var isParseToMarkDownSyntax = true;
 
 //チャット画面起動時のアバター
-var default_avatar = "images/kotone_normal.gif";
+var default_avatar = "images/ShinrouShinpu.png";
 //オペレータ呼び出し時のアバター
-var call_operator_avatar = "images/kotone_pleaseWait.gif";
+var call_operator_avatar = "images/ShinrouShinpu.png";
 //ルームロード時のタイムアウトアバター
-var room_timeout_avatar = "images/kotone_notFound.gif";
+var room_timeout_avatar = "images/ShinrouShinpu.png";
 
 //チャットタイトル
 var chat_title = "Kenta Mariko Bridal";
