@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Welcome</title>
+<link rel="stylesheet" href="index.css">
+
+<!-- チャット画面部分 -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="./originalUi.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="./properties.js"></script>
+<script>
+    isDisplayPcUi = true;
+    //横幅810px以下をスマホ版、それより上をPC版とする
+    if(window.innerWidth >= 810){//PC版の場合、デフォルトUIを非表示
+        isDisplayPcUi = true;
+        document.write('<style>#konnect-container{display:none;}</style>');
+        document.write('<style>body{position:relative !important;}</style>');
+    } else {//スマホ版の場合、デフォルトUIを表示
+        isDisplayPcUi = false;
+        document.write('<style>#konnect-container{display:"";}</style>');
+    }
+</script>
+</head>
+
+<style>
+	#domain-id {
+		display:inline
+	}
+</style>
+
+<body class="double" style="overflow:auto;">
+
+
+<!--
+	<div class="operation">
+	<b>Mobi Domain ID:</b> <input id="domain-id" type="text"> <input type="button" id="start-btn" class="modal-trigger" href="#chat_modal" onclick="return startChat();" value="チャット開始">
+	</div>
+-->
+
+<!--
+	<div class="operation">
+	<b>チャットボット指定:</b> ※下記にfujitsudemoxx を入力し、チャット開始をクリック
+		<input id="domain-id" type="text">
+		<input type="button" id="start-btn" class="modal-trigger" href="#chat_modal" onclick="return startChat();" value="チャット開始">
+	</div>
+-->
+
+<div class="operation">
+	<b>チャットボット指定:</b>
+	<select id="domain-id" name="domain-id">
+		<option value="fujitsudemo02">健太&真莉子 BridalBot</option>
+	</select>
+		<input type="button" id="start-btn" class="modal-trigger" href="#chat_modal" onclick="return startChat();" value="チャット開始">
+	</div>
+	
+</div>
+
+<!-- チャット画面部分 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+<div id="chat_modal" class="modal" style="width:810px; height:510px; overflow-y:hidden; overflow-x:hidden; border-radius:10px; max-height:510px; min-height:510px; position:absolute;">
+<div id="chat_window">
+<div id="custom_header">
+    <p id="title" style="margin-left:15%; padding-top:10px; font-size:20px; color:#fff; width:70%; float:left;" align="center"></p> 
+    <i class="material-icons white modal-close" style="text-align:right; float:right; color:#b1a287; margin:5px; border-radius:3px; cursor:pointer;">close</i>
+</div>
+
+<div id="layer">
+<div class='active'>
+  <div class="preloader-wrapper big active" style="margin-left:400px; margin-top:150px; background-color:rgba(255,255,243,0);">
+    <div class="spinner-layer spinner-blue-only">
+      <div class="circle-clipper left">
+        <div class="circle"></div>
+      </div><div class="gap-patch">
+        <div class="circle"></div>
+      </div><div class="circle-clipper right">
+        <div class="circle"></div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div id="custom_content">
+    <div id="custom_navigation" style="position:relative;">
+        <div id="info" style="height:40px;  width:100%;">
+            <p id="msg_info" style="font-size:10px;"></p>
+        </div>
+        <div id="character" style="position:absolute; z-index:1; bottom:0; height:320px; width:100%">
+            <img id="character_img" style="position:absolute; bottom:0;" width=90% >
+        </div>
+    </div>
+
+    <div id="messages">
+    </div>
+</div>
+
+<div id="custom_footer">
+    <div id="message_area">
+        <textarea class="message_form" placeholder="メッセージを入力してください・・・"></textarea>
+    </div>
+    <div id="btn_area">
+
+        <button onclick="sendMessage()" class="btn_send_message grey waves-effect waves-light btn" type="button"><i class="material-icons right">send</i>送信する</button>
+    </div>
+</div>
+
+</div>
+</div>
+
+<script>
+document.write('<script type="text/javascript" src="' + mobi_server_url + '/assets/script/embed/current/mobi-agent-client-frame-loader.min.js"><\/script>');
+</script>
+<script type="text/javascript" src="./customUi_operation.js" charset="UTF-8"></script>
+
+</body>
+</html>
