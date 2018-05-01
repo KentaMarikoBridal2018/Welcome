@@ -80,7 +80,7 @@
       line-height: 40px;
     }
     /* 画面下部ボタンのスタイル */
-    .square_btn1,.square_btn2,.square_btn3{
+    .square_btn1,.square_btn2,.square_btn3,.square_btn4{
       display: inline-block;
       margin: 3px;
       //padding: .3em 1em;
@@ -97,21 +97,33 @@
       background: #e28500;
     }
     	.square_btn1 {
-		width: calc(40% - 6px);
-		background: #84cb45;
+		width: calc(25% - 4px);
+		background: #2cbb23;
 	}
 	
 	.square_btn2 {
-		width: calc(30% - 6px);
-		background: #6BB6BB;
+		width: calc(25% - 4px);
+		background: rgb(143,170,220);
 	}
 	.square_btn3 {
-		width: calc(30% - 6px );
-		background: #6BB6BB;
+		width: calc(22% - 4px );
+		background: #2cbb23;
+	}
+	.square_btn4 {
+		width: calc(25% - 4px );
+		background: rgb(255,201,255);
+		color: rgb(51,51,51);
+    	font-weight: bold
 	}
 	
 	#mbaGuestFrame_content_input_wrapper_textarea > span {
 		 display: none !important;
+	}
+	
+	.mbaGuestFrame_content_timeline_list_message_avatar {
+	    width: 60px!important;
+	    border: 2px solid #48a24e!important;
+	    border-radius: 20%!important!important;
 	}
 	
 </style>
@@ -138,7 +150,7 @@
                 
                 var goodCount=res.good_count + '';
                 
-                $('#btn1').html("おめでとう！<br>"+ goodCount.substr(-4));
+                $('#btn1').html("🎉おめでとう！<br>"+ goodCount.substr(-4) + "回");
                 
             });
 	};
@@ -157,7 +169,7 @@
                 
                 var goodCount=res.good_count + '';
                 
-                $('#btn1').html("おめでとう！<br>"+ goodCount.substr(-4));
+                $('#btn1').html("🎉おめでとう！<br>"+ goodCount.substr(-4) + "回");
                 
             });
 	};
@@ -239,19 +251,24 @@
 			    $('#konnect-container').after('<div id="custom_btn_container" style="display:none"></div>');
 			    $('#custom_btn_container').append('<a href="#" id="btn1" class="square_btn1">おめでとう</a>');
 			    //$('#custom_btn_container').append('<a href="#" id="good_count" class="counter"></a>');
-			    $('#custom_btn_container').append('<a href="#" id="btn2" class="square_btn2">はじめに<br>戻る</a>');
-			    $('#custom_btn_container').append('<a href="#" id="btn3" class="square_btn3">新郎新婦へ<br>コメント</a>');
+			    $('#custom_btn_container').append('<a href="#" id="btn2" class="square_btn2">新郎に<br>質問する</a>');
+			    $('#custom_btn_container').append('<a href="#" id="btn4" class="square_btn4">👗新婦に<br>質問する</a>');
+			    $('#custom_btn_container').append('<a href="#" id="btn3" class="square_btn3">👏二人へ<br>メッセージ</a>');
 			    
 			    // ボタンを押した際の処理
 			    $('#btn1').on('click', function(){
 			    	countupCounter();
 			    });
 			    $('#btn2').on('click', function(){
-			    	MobiAgentClient.sendMessage('[はじめから]','');
+			    	MobiAgentClient.sendMessage('[JumpKenta]','');
 			    });
 			    $('#btn3').on('click', function(){
 			    	MobiAgentClient.sendMessage('[新郎新婦へのコメント]','');
 			    });
+				$('#btn4').on('click', function(){
+			    	MobiAgentClient.sendMessage('[JumpMariko]','');
+			    });
+				
 				
 				getCounter();
 			    
@@ -293,7 +310,7 @@
       	showChatWindow();
       	// 初回Open時に送るメッセージ
       	if(hasRoom == false || (hasRoom == true && sendMsg == false)){
-        	MobiAgentClient.sendMessage('お問い合わせ開始','');
+        	MobiAgentClient.sendMessage('[チャット開始]','');
         	hasRoom = true;
         	sendMsg = true;
       	}
@@ -319,7 +336,7 @@
           MobiAgentClient.toggle();
         });
         if (!data.hasRoom){
-          MobiAgentClient.sendMessage('問い合わせ');
+          MobiAgentClient.sendMessage('[チャット開始]');
         }
       });
       MobiAgentClient.on('closeChatView', function(data){
