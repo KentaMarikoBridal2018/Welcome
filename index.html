@@ -137,7 +137,7 @@
       right: 5px;
       bottom: 0px;
       z-index: 99998; /* div#konnect-containerに設定されている値と同じ値を指定 */
-      max-width: 498px!important; /* 横幅500から左右border分2pxマイナス */
+      //max-width: 498px!important; /* 横幅500から左右border分2pxマイナス */
       //width:498px;
       width: calc(100% - 12px);
 	  height: 40px;
@@ -286,8 +286,8 @@
 		}
 		});
     };
-	// welcome画像をクリックした時の処理
-	$('#welcome').on('click', function(){
+    
+    var endMovie=function(){
 		$('#welcome').css({
 		    //'visibility': 'hidden',
 		    'z-index':1,
@@ -296,7 +296,16 @@
 		});
 		startChat();
 		MobiAgentClient.toggle(true);
-	});
+	};
+    
+    
+	// welcome画像をクリックした時の処理
+	$('#welcome').on('click', endMovie);
+	
+	// 画像をクリックしなくても一定時間経過したらチャットを開始
+	// ※古いiPhoneでクリック（タップ）が正常に動作しない端末があるため
+	setTimeout(endMovie,8000+3000); //Gitモーションの時間＋α
+	
 	var startChat = function() {
 	    var domainId = $('#domain-id').val();
 	    localStorage.setItem('domain-id', domainId);
