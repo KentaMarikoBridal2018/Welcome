@@ -10,14 +10,16 @@
 <body class="double">
 
 <div id="top_logo">
-	<img src="./KentaMarikoBridalLogo1.png"/>
+	<img src="./KentaMarikoBridalLogo1.png" width="100%"/>
 </div>
 
+<!-- 結婚式翌日に有効化するアルバム
 <a href="https://photos.app.goo.gl/NdoDAPi37TYJEzdh7">アルバムへのリンク</a>
+-->
 
 <!--<p id="welcome"></p>-->
 <div id="welcome">
-	<img id="welcome_gif" src="./kenta_Welcome.gif"/>
+	<img id="welcome_gif" src="./kenta_Welcome.gif"  width="100%"/>
 </div>
 
 
@@ -32,30 +34,33 @@
     }
     
     
-    /* PC画面表示時のバナー */
-    
+    /* ウェルカムモーションGifのdiv要素 */
     #welcome {
 	    //display: none;
 	    position: fixed;
 	    z-index: 100000;
-	bottom: 5px;
-	right: 5px;
-	//height:330px;
-	//width:30%;
-	//height:30%;
-	//
-	    //min-width: 385px; 
-	//min-height: 82px; 
-	margin: 0;
-	//background: url("./kenta_Welcome.gif") left top no-repeat;
-	background-position: right;
-	background-size: 375px 667px; 
-	background-repeat: no-repeat;
-	cursor:pointer;
+	    width: calc(100% - 10px)!important;
+		bottom: 5px;
+		right: 5px;
+		//height:330px;
+		//width:30%;
+		//height:30%;
+		//
+		//min-width: 385px; 
+		//min-height: 82px; 
+		//margin: 0;
+		//background: url("./kenta_Welcome.gif") left top no-repeat;
+		//background-position: right;
+		//background-size: 375px 667px; 
+		//background-repeat: no-repeat;
+		cursor:pointer;
     }
+    
+    // ウェルカムモーションgifのimg要素
 	#welcome_gif{
-		width:100%;
-		max-width:420px;
+		width: 100%!important;
+    	margin-left: 10px;
+    	margin-right:10px;
 	}
 	
 	
@@ -67,7 +72,7 @@
       z-index: 99998; /* div#konnect-containerに設定されている値と同じ値を指定 */
       max-width: 498px!important; /* 横幅500から左右border分2pxマイナス */
       //width:498px;
-      width: calc(100% - 2px);
+      width: calc(100% - 12px);
 	  height: 40px;
       border: 1px solid #DDDDDD;
       background-color: #EDF8E4;
@@ -92,16 +97,16 @@
       background: #e28500;
     }
     	.square_btn1 {
-		width: calc(40% - 10px);
+		width: calc(40% - 6px);
 		background: #84cb45;
 	}
 	
 	.square_btn2 {
-		width: calc(30% - 10px);
+		width: calc(30% - 6px);
 		background: #6BB6BB;
 	}
 	.square_btn3 {
-		width: calc(30% - 10px);
+		width: calc(30% - 6px );
 		background: #6BB6BB;
 	}
 	
