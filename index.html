@@ -9,9 +9,11 @@
 </head>
 <body class="double">
 
+<!--
 <div id="top_logo">
 	<img src="./KentaMarikoBridalLogo1.png" width="100%"/>
 </div>
+-->
 
 <!-- 結婚式翌日に有効化するアルバム
 <a href="https://photos.app.goo.gl/NdoDAPi37TYJEzdh7">アルバムへのリンク</a>
@@ -19,7 +21,36 @@
 
 <!--<p id="welcome"></p>-->
 <div id="welcome">
-	<img id="welcome_gif" src="./kenta_Welcome.gif"  width="100%"/>
+	<div id="welcome_header" >
+		<table>
+			<tbody>
+				<tr>
+					<td>
+						<img src="bride_and_groom_small.png" style="height:30%;" />
+					</td>
+					<td>
+						<table>
+							<tr>
+								<td>
+									Kenta & Mariko
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Bridal
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div id="welcome_body">
+		<img id="welcome_img" src="./kenta_Welcome.gif"  style="width:100%; position:absolute; bottom:10%;" ></img>
+	</div>
+	<div id="welcome_footer">powerd by CHORDSHIP</div>
+	
 </div>
 
 
@@ -33,15 +64,24 @@
       max-height: calc(100% - 40px)!important; // 画面高さ - 下部ボタン高さ - 画面上部との余白
     }
     
+    #welcome {
+    	width: 100%;
+    	height:100%;
+    	z-index: 100000;
+    }
     
     /* ウェルカムモーションGifのdiv要素 */
-    #welcome {
+    #welcome_body {
 	    //display: none;
-	    position: fixed;
-	    z-index: 100000;
-	    width: calc(100% - 10px)!important;
+	   // position: fixed;
+	    //position: relative;
+	    
+	    position: absolute;
+	    
+	    width: 100%!important;
+	    height:75%;
 		bottom: 5px;
-		right: 5px;
+		left:0;
 		//height:330px;
 		//width:30%;
 		//height:30%;
@@ -53,14 +93,55 @@
 		//background-position: right;
 		//background-size: 375px 667px; 
 		//background-repeat: no-repeat;
+		//background-color:rgb(193,224,180);
 		cursor:pointer;
-    }
-    
-    // ウェルカムモーションgifのimg要素
-	#welcome_gif{
+		
+
+   }
+   
+   #welcome_header {
+   		position: absolute;
+   		width: 100%;
+   		height:13%;
+   		top:0;
+   		left:0;
+   		
+   		background-color:#4BA77C;
+   		font:Monotype Corsiva;
+   		font-size:15px;
+   		
+   		font-family: Monotype Corsiva;
+    	font-size: 35px;
+    	color: cornsilk;
+   }
+   
+   #welcome_header >  td {
+   		height:5%;
+   }
+   
+   #welcome_footer {
+   		position: absolute;
+   		width: 100%;
+   		height:5%;
+   		bottom:0;
+   		left:0;
+   		background-color:#4BA77C;
+   		
+   		//font-family: Monotype Corsiva;
+    	font-size: 20px;
+    	color: cornsilk;
+    	text-align:right;
+   }
+   
+   // ウェルカムモーションgifのimg要素
+	#welcome_img {
+		position:absolute;
 		width: 100%!important;
-    	margin-left: 10px;
-    	margin-right:10px;
+		bottom:0;
+		right:0;
+		margin: auto;
+   	//margin-left: 10px;
+    	//margin-right:10px;
 	}
 	
 	
