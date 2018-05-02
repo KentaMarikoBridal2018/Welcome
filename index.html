@@ -36,14 +36,16 @@
 		</table>
 	</div>
 	<div id="welcome_body">
-		<img id="welcome_img" src="./kenta_Welcome.gif"  style="width:100%; position:absolute; top:0;" ></img>
+		<img id="welcome_img" src="./kenta_Welcome.gif"  style="width:100%; position:absolute; top:0;" />
 	</div>
 	<!--
 		<div id="welcome_footer">powerd by CHORDSHIP</div>
 	-->
-	
 </div>
-
+	
+<div id="goodAnimation">
+	<img  src="./goodTouchAnimation.gif" width="100%" />
+</div>
 
 <style>
 	/* チャット画面を囲むdiv要素のスタイル */
@@ -66,7 +68,7 @@
 	    //display: none;
 	   // position: fixed;
 	    //position: relative;
-	    
+	    z-index: 100000;
 	    position: absolute;
 	    
 	    width: 100%!important;
@@ -154,7 +156,7 @@
       border-radius: 3px;
       box-sizing: border-box;
       color: #fff;
-      font-size: 12px;
+      font-size: 1vw;
       line-height: 1.5;
       text-decoration: none;
       text-align: center;
@@ -192,6 +194,14 @@
 	    border: 2px solid #48a24e!important;
 	    border-radius: 20%!important!important;
 	}
+	
+	#goodAnimation {
+		opacity:0.0;
+		position:fixed;
+    	width: 100%;
+    	z-index: 1;
+    	bottom:10%;
+    }
 	
 </style>
 	
@@ -239,6 +249,27 @@
                 $('#btn1').html("🎉おめでとう！<br>"+ goodCount.substr(-4) + "回");
                 
             });
+	};
+	
+	function btnClickAnimation() {
+		setTimeout(() => {
+			$('#goodAnimation').css({
+		    	'z-index':100001,
+		    	'opacity': '1.0',
+		    	'transition' : 'opacity 0.5s linear 0s'
+			});
+			setTimeout(() => {
+				$('#goodAnimation').css({
+			    	//'z-index':1,
+			    	'opacity': '0.0',
+			    	'transition' : 'opacity 0.5s linear 0s'
+				});
+				setTimeout(() => {
+					$('#goodAnimation').css({
+				    	'z-index':1
+			    	})}, 500);
+				}, 5000);
+		}, 0);
 	};
 	
 	 function showChatWindow() {
@@ -327,19 +358,20 @@
 			    $('#konnect-container').after('<div id="custom_btn_container" style="display:none"></div>');
 			    $('#custom_btn_container').append('<a href="#" id="btn1" class="square_btn1">おめでとう</a>');
 			    //$('#custom_btn_container').append('<a href="#" id="good_count" class="counter"></a>');
-			    $('#custom_btn_container').append('<a href="#" id="btn2" class="square_btn2">新郎に<br>質問する</a>');
+			    $('#custom_btn_container').append('<a href="#" id="btn2" class="square_btn2">🍀新郎に<br>質問する</a>');
 			    $('#custom_btn_container').append('<a href="#" id="btn4" class="square_btn4">👗新婦に<br>質問する</a>');
 			    $('#custom_btn_container').append('<a href="#" id="btn3" class="square_btn3">👏二人へ<br>メッセージ</a>');
 			    
 			    // ボタンを押した際の処理
 			    $('#btn1').on('click', function(){
 			    	countupCounter();
+			    	btnClickAnimation();
 			    });
 			    $('#btn2').on('click', function(){
 			    	MobiAgentClient.sendMessage('[JumpKenta]','');
 			    });
 			    $('#btn3').on('click', function(){
-			    	MobiAgentClient.sendMessage('[新郎新婦へのコメント]','');
+			    	MobiAgentClient.sendMessage('[JumpComment]','');
 			    });
 				$('#btn4').on('click', function(){
 			    	MobiAgentClient.sendMessage('[JumpMariko]','');
