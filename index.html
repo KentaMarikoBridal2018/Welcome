@@ -15,9 +15,10 @@
 </div>
 -->
 
-<!-- 結婚式翌日に有効化するアルバム
+
+
+<!-- 結婚式翌日に有効化するアルバム -->
 <a href="https://photos.app.goo.gl/NdoDAPi37TYJEzdh7">アルバムへのリンク</a>
--->
 
 <!--<p id="welcome"></p>-->
 <div id="welcome">
@@ -36,17 +37,30 @@
 		</table>
 	</div>
 	<div id="welcome_body">
-		<img id="welcome_img" src="./kenta_Welcome.gif"  style="width:100%; position:absolute; top:0;" />
+		<!--<img id="welcome_img" src="./kenta_Welcome.gif"  style="width:100%; position:absolute; top:0;" />-->
+		
+		<p id="thank_you">ご多用の所 ご列席いただき<br>ありがとうございました！</p>
+		<a id="photo_link" href="https://photos.app.goo.gl/NdoDAPi37TYJEzdh7">🍀結婚式・披露宴の写真はこちら🍀</a>
+		<div id="photo">
+			<img src="https://lh3.googleusercontent.com/_Qlb5vR4yJNFRDNsgRvPoyokQ-Tab8FQVxD9Cg6SPQbCLnKArSiTcKAorSgUI9XMTj2roTv5N8AVgK4Jh7WSPzMPi-7D9bL51QTETDjtMVS4X2fK8rxUO_s5mCcr9JS9ymapEK-Xuq-nZ03jhZQUEm5stxZCNsQGB4pd0wf_YePJp2RxjKqJdB6QBS4TvbVqNG5P9LThwjXyxhT51TF5bKGh_yAdtT2ivSDpvmBaTnzhPa5PpuAH2IpekbBd1-rouVFjFztBj-YukFTZU4E2fUwURHukL-oLEkdFWw9txmfSZIyEOuwaZG3pX-6RrTfiHdYspc107BXmSJYgCf9-54nTzVToZTOVPM4dW3nPQ94ZO-TOUY-o3nNL4DZQIDj-YFa3h2KPMXrAHWT-nqffD5Q9SW5BcOgCyUf1ClblZqaZYXwNm2XH5hNzs23ODWddkR-FawGVA5ltDP_N4qbGC8HPspEWUgfAGVZ9raOFBnAwR1icMfJm31H_bVJxkj4IrFK8m6f2Of_ZDDZwEa68b-KOmBVKcf6dwkizB8OWmlXY0jzd7DrzQu1bb8ZnmKN2sy9Nv8vKsvDXBsHUhC04qAQTXZz5yGPMRdygaLuIRn0L-sRUjiGrR7QBpR9eF-5_-316TgTY6-6tK9ld6JCzujFy-D1PSO4=w926-h694-no" width="80%">
+			<img src="https://lh3.googleusercontent.com/DkC1qNd33kcGayHdK6Y-j_fN2mGlcqEM3NkZQW5g4ZVZE5o-zQlmBLjdsZbVZMpQpdunnNmrsB7iHhJiuVYhocLXSvHOBG6XrSwL3tyMJrSwiKVzUM2akFwaWPkweEVb9mo6WFrdac3Z4D6p4gXiRpTRYUMAwj3w0na2qcZLTC1Nc7SDGAaQgSs0ONPMM08eQTguIWFt6c6dN62tqgDk3JqAeztQ12aL4xcU-SsFRfPeWknQMaJQDbUTyNRcII5P5gB7OtGjAGXD7ZCOzjbWoBvTNpZSlr77XHHKqvkd3KD_uvdmS5XHM98f9j9VFwyg0avFz-_GJV0M8SpTDZZk7iycuybZX8WJKWjezxgwAtQZcQFBdA-LY8iXmFfOIkcYPKcXyK0aoVHps5IAlZL05UWsDfJNR4c7A8lKnIyq2Ohs5QaHSijpbyg_Ssz-MP6aTnnOQYI16v9LEajimZ9d9zRZCAaOjYvUbe94lqb9134Bfhu5GsCkKAJMHM3ElOsYogHZVwgmcWeqx95pTWQwHBfRDfz4uFFjxk7sm6voAX1RoAzGcRFiN0B-rEK4GiSTapcoup98bgtx7nyOjkNE-UD_63MKpdusYd-28Vphcoa8f9DRENP1JKQLeaMmrkPsH06YmLXZbvNTJyl5Zb2c-HWJwJIF1I0=w899-h675-no" width="80%">
+		</div>
+		
+		
 	</div>
+	
+	
 	<!--
 		<div id="welcome_footer">powerd by CHORDSHIP</div>
 	-->
 </div>
 	
+<!-- 
 <div id="goodAnimation">
 	<p id="goodAnimationText">ありがとうございます</p>
 	<img  src="./goodTouchAnimation.gif" width="100%" />
 </div>
+-->
 
 <p id="tempCounter">0</p>
 
@@ -165,7 +179,8 @@
       text-align: center;
       vertical-align: middle;
       transition: .4s;
-    }.square_btn1:hover,.square_btn2:hover,.square_btn3:hover {
+    }
+    .square_btn1:hover,.square_btn2:hover,.square_btn3:hover {
       background: #e28500;
     }
     	.square_btn1 {
@@ -222,346 +237,66 @@
     	color:white;
     	z-index: 1;
     }
+    
+    #photo {
+    	width:90%;
+    	margin: 10px auto;
+    }
+    
+    #photo > img {
+    	display: flex;
+   		margin:10px auto;
+    }
+    
+    #thank_you {
+    	background-color:rgb(255,201,255);
+    	color:rgb(23,55,94);
+    	font-weight:bold;
+    	font-size:6vw;
+    	text-align:center
+    }
+    
+    /*#photo_link {
+    	display: flex;
+    	border-radius: 3px;
+    	background-color:rgb(255,201,255);
+    	color:rgb(23,55,94);
+    	font-weight:bold;
+    	font-size:4vw;
+    	margin: 10px auto;
+    }
+	*/
+	
+	#photo_link {
+
+     //display: inline-block;
+      display: block;
+      //display:flex;
+      width:90%;
+      margin: 10px auto;
+      padding: .3em 1em;
+      border-radius: 3px;
+      box-sizing: border-box;
+      background-color:rgb(255,201,255);
+      color:rgb(23,55,94);
+      font-size: 4vw;
+      line-height: 2;
+      text-decoration: none;
+      text-align: center;
+      //vertical-align: middle;
+      transition: .4s;
+	}
+	
+	#photo_link:hover {
+      background: #e28500;
+    }
 	
 </style>
 	
 	
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-<script type="text/javascript" src="https://agent.chordship.global.fujitsu.com/assets/script/embed/current/mobi-agent-client-frame-loader.min.js"></script>
 
-	
-<script>
-	
-	'use strict';
-	
-	function countupCounter() {
-
-            let target = `https://kentamarikohappywedding.azurewebsites.net/good`;
-            $.ajax({
-                url: target,
-                data: 'json',
-                async: false
-            })
-            .done((res) => {
-                console.log(res);
-                
-                var goodCount=res.good_count + '';
-                
-                $('#btn1').html("🎉おめでとう<br>"+ goodCount.substr(-4) + "回");
-                $('#tempCounter').html(goodCount.substr(-4));
-               
-            });
-	};
-	
-	function getCounter() {
-
-
-            let target = `https://kentamarikohappywedding.azurewebsites.net/get`;
-           
-            $.ajax({
-                url: target,
-                data: 'json'
-            })
-            .done((res) => {
-                console.log(res);
-                
-                var goodCount=res.good_count + '';
-                
-                $('#btn1').html("🎉おめでとう<br>"+ goodCount.substr(-4) + "回");
-                $('#tempCounter').html(goodCount.substr(-4));
-                
-            });
-	};
-	
-	function btnClickAnimation(message) {
-		setTimeout(() => {
-			$('#goodAnimation').css({
-		    	'z-index':100001,
-		    	'opacity': '1.0',
-		    	'transition' : 'opacity 0.5s linear 0s'
-			});
-			
-			$('#goodAnimationText').html(message);
-			
-			setTimeout(() => {
-				$('#goodAnimation').css({
-			    	//'z-index':1,
-			    	'opacity': '0.0',
-			    	'transition' : 'opacity 0.5s linear 0s'
-				});
-				setTimeout(() => {
-					$('#goodAnimation').css({
-				    	'z-index':1
-			    	})}, 500);
-				}, 8000);
-		}, 0);
-	};
-	
-	 function showChatWindow() {
-	      // 小窓の制御
-	     $('#konnect-container').css({
-	        'visibility': 'visible',
-	        'opacity': '1.0',
-	        'top': 'auto',
-	        'bottom': ''
-	      });
-	      // 下部ボタンの制御
-	      $('#custom_btn_container').show();
-	      // 閉じるボタンの制御
-	      setTimeout(function() {
-	        $('#close_btn').css('display', 'block');
-	      }, 500);
-	      // バナーを閉じる
-	      //$('#mobileBanner').fadeOut('normal');
-		 
-		
-    };
-    
-    // チャット画面を隠す処理
-     function hideChatWindow() {
-		// 下部ボタンの制御
-		$('#custom_btn_container').fadeOut(500);
-		// 閉じるボタンの制御
-		$('#close_btn').css('display', 'none');
-		// 小窓の制御
-		$('#konnect-container').animate({
-		'opacity': '0'
-		},{
-		duration: 500,
-		queue: false,
-		complete: function() { // コールバック
-		  $('#konnect-container').css({
-		    'visibility': 'hidden',
-		    'top': 'auto',
-		    //'top': '200px',
-		    //'bottom': '-' + $('#konnect-container').height() + 'px'
-		    'bottom': ''
-		  });
-		  // バナー表示
-		  $('#mobileBanner').fadeIn('normal');
-		}
-		});
-    };
-    
-    var endMovie=function(){
-		$('#welcome').css({
-		    //'visibility': 'hidden',
-		    'z-index':1,
-		    'opacity': '0.0',
-		    'transition' : 'opacity 1s linear 0s'
-		});
-		startChat();
-		MobiAgentClient.toggle(true);
-	};
-    
-    
-	// welcome画像をクリックした時の処理
-	$('#welcome').on('click', endMovie);
-	
-	// 画像をクリックしなくても一定時間経過したらチャットを開始
-	// ※古いiPhoneでクリック（タップ）が正常に動作しない端末があるため
-	setTimeout(endMovie,8000+3000); //Gitモーションの時間＋α
-	
-	var startChat = function() {
-	    var domainId = $('#domain-id').val();
-	    localStorage.setItem('domain-id', domainId);
-		
-		
-	    MobiAgentClient.init(
-    		'https://agent.chordship.global.fujitsu.com', // server url
-    		'fujitsudemo02',
-			{
-		        useMarkDownSyntax: true,
-		        allowFileUpload: false,
-		        skipDomainStatusCheck: true,
-		        listenVisiblityChange: false,
-		        showAvatar: true,
-		        location: "KentaMarikoBridal"
-			}, // options
-			function(){
-				// チャット画面の読み込み後、コールバックでボタンをappendする
-			    $('#konnect-container').after('<div id="custom_btn_container" style="display:none"></div>');
-			    $('#custom_btn_container').append('<a href="#" id="btn1" class="square_btn1">おめでとう</a>');
-			    //$('#custom_btn_container').append('<a href="#" id="good_count" class="counter"></a>');
-			    $('#custom_btn_container').append('<a href="#" id="btn2" class="square_btn2">🍀新郎に<br>質問する</a>');
-			    $('#custom_btn_container').append('<a href="#" id="btn4" class="square_btn4">👗新婦に<br>質問する</a>');
-			    $('#custom_btn_container').append('<a href="#" id="btn3" class="square_btn3">👏二人へ<br>メッセージ</a>');
-			    
-			    // ボタンを押した際の処理
-			    $('#btn1').on('click', function(){
-					countupCounter();
-					
-					switch(true){
-						case ($('#tempCounter').text() & ($('#tempCounter').text() - 1)) == 0:
-							//btnClickAnimation("🍀ありがとうございます🍀<br>※この画面は ある法則で表示されます<br>[おめでとうカウンター：" + $('#tempCounter').text() + "回]");
-							break;
-						case $('#tempCounter').text()==123:
-							btnClickAnimation("🍀ありがとうございます🍀<br>1月23日は新郎の誕生日です！<br>[おめでとうカウンター：" + $('#tempCounter').text() + "回]");
-							break;
-						case $('#tempCounter').text()==325:
-							btnClickAnimation("🍀ありがとうございます🍀<br>3月25日はプロポーズ記念日です！<br>[おめでとうカウンター：" + $('#tempCounter').text() + "回]");
-							break;
-						case $('#tempCounter').text()==504:
-							btnClickAnimation("🍀ありがとうございます🍀<br>本日5月4日 この良き日に<br>皆様にお会いできたことに<br>感謝いたします<br>[おめでとうカウンター：" + $('#tempCounter').text() + "回]");
-							break;
-						case $('#tempCounter').text()==522:
-							btnClickAnimation("🍀ありがとうございます🍀<br>5月22日は新婦の誕生日です！<br>[おめでとうカウンター：" + $('#tempCounter').text() + "回]");
-							break;
-						case $('#tempCounter').text()==620:
-							btnClickAnimation("🍀ありがとうございます🍀<br>6月20日は新郎新婦の勤務先の<br>富士通の創立記念日です<br>[おめでとうカウンター：" + $('#tempCounter').text() + "回]");
-							break;
-						case $('#tempCounter').text()==624:
-							btnClickAnimation("🍀ありがとうございます🍀<br>6月24日は入籍記念日です！<br>[おめでとうカウンター：" + $('#tempCounter').text() + "回]");
-							break;
-						case $('#tempCounter').text()==777:
-							btnClickAnimation("🍀ありがとうございます🍀<br>ラッキーセブン獲得です!<br>きっと幸運が訪れることでしょう<br>[おめでとうカウンター：" + $('#tempCounter').text() + "回]");
-							break;
-						case $('#tempCounter').text()==1000:
-							btnClickAnimation("🍀ありがとうございます🍀<br>1000回達成！！！！<br>ちなみに・・・<br>このカウンタの上限は9999です<br>[おめでとうカウンター：" + $('#tempCounter').text() + "回]");
-							break;
-						case $('#tempCounter').text()==1203:
-							btnClickAnimation("🍀ありがとうございます🍀<br>12月3日は初デート記念日です！<br>[おめでとうカウンター：" + $('#tempCounter').text() + "回]");
-							break;
-						case $('#tempCounter').text()==2008:
-							btnClickAnimation("🍀ありがとうございます🍀<br>2008年は新婦の入社年度です<br>[おめでとうカウンター：" + $('#tempCounter').text() + "回]");
-							break;
-						case $('#tempCounter').text()==2009:
-							btnClickAnimation("🍀ありがとうございます🍀<br>2009年は新郎の入社年度です<br>新婦の方が１年先輩ですね<br>[おめでとうカウンター：" + $('#tempCounter').text() + "回]");
-							break;
-						case $('#tempCounter').text()==3862:
-							btnClickAnimation("🍀ありがとうございます🍀<br>フォーチュンガーデン京都の番地は386-2です。<br>[おめでとうカウンター：" + $('#tempCounter').text() + "回]");
-							break;
-						case $('#tempCounter').text()==6702:
-							btnClickAnimation("🍀ありがとうございます🍀<br>6702は富士通の証券コードです。東証一部です。<br>[おめでとうカウンター：" + $('#tempCounter').text() + "回]");
-							break;
-						case $('#tempCounter').text()==8833:
-							btnClickAnimation("🍀ありがとうございます🍀<br>フォーチュンガーデン京都の<br>電話番号の下四桁は8833です<br>[おめでとうカウンター：" + $('#tempCounter').text() + "回]");
-							break;
-						case $('#tempCounter').text()==9999:
-							btnClickAnimation("🍀ありがとうございます🍀<br>9999回達成！！！！<br>このカウンタはここでお終いですが<br>新郎新婦の家庭はここから始まります<br>雨の日も 風の日も 雪の日も<br>２４時間３６５日<br>幸せな家庭を築いていきます！<br>[おめでとうカウンター：" + $('#tempCounter').text() + "回]");
-							break;
-						default:
-					}
-			    });
-			    
-			    $('#btn2').on('click', function(){
-			    	MobiAgentClient.sendMessage('[JumpKenta]','');
-			    });
-			    $('#btn3').on('click', function(){
-			    	MobiAgentClient.sendMessage('[JumpComment]','');
-			    });
-				$('#btn4').on('click', function(){
-			    	MobiAgentClient.sendMessage('[JumpMariko]','');
-			    });
-				
-				
-				getCounter();
-			    
-			});
-			
-	};
-	
-	
-		 // 初回小窓オープン時かどうかを判定
-    var hasRoom = false; // ルームがすでに存在するかどうか
-    var sendMsg = false; // 初回メッセージが送信されたかどうか
-    // 小窓画面ロード時に呼ばれるイベント
-    MobiAgentClient.on('sdkReady', function(data){
-      MobiAgentClient.on('roomReady', function(data){
-      	MobiAgentClient.toggle(true);
-      });
-	    
-      // 小窓のみリロードする場合
-      if(hasRoom && sendMsg){
-      	//showChatWindow()
-        hasRoom = false;
-        sendMsg = false;
-      }
-      else {
-        //hideChatWindow();
-      }
-      // セッションが存在した場合
-      if (data.hasRoom){
-        hasRoom = true;
-        sendMsg = false;
-      }
-    });
-		
-	
-	// チャット小窓のOpen時の処理
-	// 初めに１チャット送信しないと、カテゴリ選択が表示されないため
-	MobiAgentClient.on('openFrame', function(data2){
-		
-      	showChatWindow();
-      	// 初回Open時に送るメッセージ
-      	if(hasRoom == false || (hasRoom == true && sendMsg == false)){
-        	MobiAgentClient.sendMessage('[チャット開始]','');
-        	hasRoom = true;
-        	sendMsg = true;
-      	}
-		 });
-		 
-		 // チャット小窓のClose時の処理
-	MobiAgentClient.on('closeFrame', function(data2){
-  		hideChatWindow();
-		
-		$('#welcome').css({
-		    //'visibility': 'visible',
-		    'z-index':100000,
-		    'opacity': '1.0',
-		    'transition' : 'opacity 1s linear 0s'
-		});
-	});
-	
-	/*
-	$(function(){
-      $('#domain-id').val(localStorage.getItem('domain-id'));
-      MobiAgentClient.on('sdkReady', function(data){
-        MobiAgentClient.on('roomReady', function(data){
-          MobiAgentClient.toggle();
-        });
-        if (!data.hasRoom){
-          MobiAgentClient.sendMessage('[チャット開始]');
-        }
-      });
-      MobiAgentClient.on('closeChatView', function(data){
-        location.reload(true);
-      });
-    });	*/
-    
-	function closeRoom(){
-	    setTimeout(() => {
-	      MobiAgentClient.setReviewThenClose(5, 'ルームクローズ');
-	      setTimeout(() => {
-	        MobiAgentClient.loadOnceGuard=false;
-	        //hideChatWindow();
-	        //MobiAgentClient.toggle(false);
-	      }, 0)
-	    }, 0);
-	}
-	
-	var removeMobiContainer = function(){
-		$("#konnect-container").remove();
-		$("#custom_btn_container").remove();
-		console.log("remove mobi container");
-  	};
-  	
-	var closeSessionAndInitMobi = function(){
-		setTimeout(() => {
-			closeRoom();
-			setTimeout(() => {
-				MobiAgentClient.toggle(false);
-				removeMobiContainer();
-				setTimeout(() => {
-					startChat();
-				}, 500)
-			}, 500)
-		}, 0);
-	};
-	
-    
-</script>
 
 </body>
 </html>
