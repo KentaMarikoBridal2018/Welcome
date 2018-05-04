@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Welcome to Kenta & Mariko Bridal</title>
+	<link rel="stylesheet" href="index.css">
+</head>
+<body class="double">
+
+<!--
+<div id="top_logo">
+	<img src="./KentaMarikoBridalLogo1.png" width="100%"/>
+</div>
+-->
+
+<!-- 結婚式翌日に有効化するアルバム
+<a href="https://photos.app.goo.gl/NdoDAPi37TYJEzdh7">アルバムへのリンク</a>
+-->
+
+<!--<p id="welcome"></p>-->
+<div id="welcome">
+	<div id="welcome_header" >
+		<table>
+			<tbody>
+				<tr>
+					<td>
+						<img src="bride_and_groom_small.png" style="height:20%;" />
+					</td>
+					<td>
+						Kenta & Mariko Bridal
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div id="welcome_body">
+		<img id="welcome_img" src="./kenta_Welcome.gif"  style="width:100%; position:absolute; top:0;" />
+	</div>
+	<!--
+		<div id="welcome_footer">powerd by CHORDSHIP</div>
+	-->
+</div>
+	
+<div id="goodAnimation">
+	<p id="goodAnimationText">ありがとうございます</p>
+	<img  src="./goodTouchAnimation.gif" width="100%" />
+</div>
+
+<p id="tempCounter">0</p>
+
+<style>
+	/* チャット画面を囲むdiv要素のスタイル */
+    #konnect-container {
+      //opacity: 0; // ページ読み込み時に一瞬表示される小窓を抑止するため 
+      right: 5px;
+      bottom: 40px; // !important無指定  
+      width: 498px!important; /* 横幅500から左右border分2pxマイナス */
+      max-height: calc(100% - 40px)!important; // 画面高さ - 下部ボタン高さ - 画面上部との余白
+    }
+    
+    #welcome {
+    	width: 100%;
+    	height:100%;
+    	z-index: 100000;
+    }
+    
+    /* ウェルカムモーションGifのdiv要素 */
+    #welcome_body {
+	    //display: none;
+	   // position: fixed;
+	    //position: relative;
+	    z-index: 100000;
+	    position: absolute;
+	    
+	    width: 100%!important;
+	    height:75%;
+		top: 11%;
+		left:0;
+		//height:330px;
+		//width:30%;
+		//height:30%;
+		//
+		//min-width: 385px; 
+		//min-height: 82px; 
+		//margin: 0;
+		//background: url("./kenta_Welcome.gif") left top no-repeat;
+		//background-position: right;
+		//background-size: 375px 667px; 
+		//background-repeat: no-repeat;
+		//background-color:rgb(193,224,180);
+		cursor:pointer;
+		
+
+   }
+   
+   #welcome_header {
+   		position: absolute;
+   		width: 100%;
+   		height:10%;
+   		top:0;
+   		left:0;
+   		
+   		background-color:#4BA77C;
+   		
+   		font-family: Impact;
+    	font-size: 8vw;
+    	color: rgb(242,242,242);
+   }
+   
+   
+   #welcome_footer {
+   		position: absolute;
+   		width: 100%;
+   		height:3%;
+   		bottom:0;
+   		left:0;
+   		background-color:#4BA77C;
+   		
+   		//font-family: Monotype Corsiva;
+    	font-size: 10px;
+    	color: cornsilk;
+    	text-align:right;
+   }
+   
+   // ウェルカムモーションgifのimg要素
+	#welcome_img {
+		position:absolute;
+		width: 100%!important;
+		bottom:0;
+		right:0;
+		margin: auto;
+   	//margin-left: 10px;
+    	//margin-right:10px;
+	}
+	
+	
+    /* 画面下部のボタン表示部のスタイル */
+    #custom_btn_container {
+      position: fixed;
+      right: 5px;
+      bottom: 0px;
+      z-index: 99998; /* div#konnect-containerに設定されている値と同じ値を指定 */
+      //max-width: 498px!important; /* 横幅500から左右border分2pxマイナス */
+      //width:498px;
+      width: calc(100% - 12px);
+	  height: 40px;
+      border: 1px solid #DDDDDD;
+      background-color: #EDF8E4;
+      font-family: "Yu Gothic Medium", YuGothic, sans-serif;
+      line-height: 40px;
+    }
+    /* 画面下部ボタンのスタイル */
+    .square_btn1,.square_btn2,.square_btn3,.square_btn4{
+      display: inline-block;
+      margin: 3px;
+      //padding: .3em 1em;
+      border-radius: 3px;
+      box-sizing: border-box;
+      color: #fff;
+      font-size: 3.5vw;
+      line-height: 1.5;
+      text-decoration: none;
+      text-align: center;
+      vertical-align: middle;
+      transition: .4s;
+    }.square_btn1:hover,.square_btn2:hover,.square_btn3:hover {
+      background: #e28500;
+    }
+    	.square_btn1 {
+		width: calc(27% - 4px);
+		background: #2cbb23;
+	}
+	
+	.square_btn2 {
+		width: calc(24% - 4px);
+		background: rgb(143,170,220);
+	}
+	.square_btn3 {
+		width: calc(22% - 4px );
+		background: #2cbb23;
+	}
+	.square_btn4 {
+		width: calc(24% - 4px );
+		background: rgb(255,201,255);
+		color: rgb(51,51,51);
+    	font-weight: bold
+	}
+	
+	#mbaGuestFrame_content_input_wrapper_textarea > span {
+		 display: none !important;
+	}
+	
+	.mbaGuestFrame_content_timeline_list_message_avatar {
+	    width: 60px!important;
+	    border: 2px solid #48a24e!important;
+	    border-radius: 20%!important!important;
+	}
+	
+	#goodAnimation {
+		opacity:0.0;
+		position:fixed;
+    	width: 100%;
+    	z-index: 1;
+    	bottom:80px;
+    }
+    
+    #goodAnimationText {
+    	position:absolute;
+    	width:calc(100% - 16px);
+    	left:8px;
+    	font-size:5vw;
+    	background-color:white;
+    	top:20%;
+    	//color:white;
+    	font-style:bold;
+    	text-align:center;
+    }
+    
+    #tempCounter {
+    	color:white;
+    	z-index: 1;
+    }
+	
+</style>
+	
+	
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script type="text/javascript" src="https://agent.chordship.global.fujitsu.com/assets/script/embed/current/mobi-agent-client-frame-loader.min.js"></script>
+
+	
+<script>
+	
+	'use strict';
+	
+	function countupCounter() {
+
+            let target = `https://kentamarikohappywedding.azurewebsites.net/good`;
+            $.ajax({
+                url: target,
+                data: 'json',
+                async: false
+            })
+            .done((res) => {
+                console.log(res);
+                
+                var goodCount=res.good_count + '';
+                
+                $('#btn1').html("🎉おめでとう<br>"+ goodCount.substr(-5) + "回");
+                $('#tempCounter').html(goodCount.substr(-4));
+               
+            });
+	};
+	
+	function getCounter() {
+
+
+            let target = `https://kentamarikohappywedding.azurewebsites.net/get`;
+           
+            $.ajax({
+                url: target,
+                data: 'json'
+            })
+            .done((res) => {
+                console.log(res);
+                
+                var goodCount=res.good_count + '';
+                
+                $('#btn1').html("🎉おめでとう<br>"+ goodCount.substr(-5) + "回");
+                $('#tempCounter').html(goodCount.substr(-4));
+                
+            });
+	};
+	
+	function btnClickAnimation(message) {
+		setTimeout(() => {
+			$('#goodAnimation').css({
+		    	'z-index':100001,
+		    	'opacity': '1.0',
+		    	'transition' : 'opacity 0.5s linear 0s'
+			});
+			
+			$('#goodAnimationText').html(message);
+			
+			setTimeout(() => {
+				$('#goodAnimation').css({
+			    	//'z-index':1,
+			    	'opacity': '0.0',
+			    	'transition' : 'opacity 0.5s linear 0s'
+				});
+				setTimeout(() => {
+					$('#goodAnimation').css({
+				    	'z-index':1
+			    	})}, 500);
+				}, 8000);
+		}, 0);
+	};
+	
+	 function showChatWindow() {
+	      // 小窓の制御
+	     $('#konnect-container').css({
+	        'visibility': 'visible',
+	        'opacity': '1.0',
+	        'top': 'auto',
+	        'bottom': ''
+	      });
+	      // 下部ボタンの制御
+	      $('#custom_btn_container').show();
+	      // 閉じるボタンの制御
+	      setTimeout(function() {
+	        $('#close_btn').css('display', 'block');
+	      }, 500);
+	      // バナーを閉じる
+	      //$('#mobileBanner').fadeOut('normal');
+		 
+		
+    };
+    
+    // チャット画面を隠す処理
+     function hideChatWindow() {
+		// 下部ボタンの制御
+		$('#custom_btn_container').fadeOut(500);
+		// 閉じるボタンの制御
+		$('#close_btn').css('display', 'none');
+		// 小窓の制御
+		$('#konnect-container').animate({
+		'opacity': '0'
+		},{
+		duration: 500,
+		queue: false,
+		complete: function() { // コールバック
+		  $('#konnect-container').css({
+		    'visibility': 'hidden',
+		    'top': 'auto',
+		    //'top': '200px',
+		    //'bottom': '-' + $('#konnect-container').height() + 'px'
+		    'bottom': ''
+		  });
+		  // バナー表示
+		  $('#mobileBanner').fadeIn('normal');
+		}
+		});
+    };
+    
+    var endMovie=function(){
+		$('#welcome').css({
+		    //'visibility': 'hidden',
+		    'z-index':1,
+		    'opacity': '0.0',
+		    'transition' : 'opacity 1s linear 0s'
+		});
+		startChat();
+		MobiAgentClient.toggle(true);
+	};
+    
+    
+	// welcome画像をクリックした時の処理
+	$('#welcome').on('click', endMovie);
+	
+	// 画像をクリックしなくても一定時間経過したらチャットを開始
+	// ※古いiPhoneでクリック（タップ）が正常に動作しない端末があるため
+	setTimeout(endMovie,8000+3000); //Gitモーションの時間＋α
+	
+	var startChat = function() {
+	    var domainId = $('#domain-id').val();
+	    localStorage.setItem('domain-id', domainId);
+		
+		
+	    MobiAgentClient.init(
+    		'https://agent.chordship.global.fujitsu.com', // server url
+    		'fujitsudemo02',
+			{
+		        useMarkDownSyntax: true,
+		        allowFileUpload: false,
+		        skipDomainStatusCheck: true,
+		        listenVisiblityChange: false,
+		        showAvatar: true,
+		        location: "KentaMarikoBridal"
+			}, // options
+			function(){
+				// チャット画面の読み込み後、コールバックでボタンをappendする
+			    $('#konnect-container').after('<div id="custom_btn_container" style="display:none"></div>');
+			    $('#custom_btn_container').append('<a href="#" id="btn1" class="square_btn1">おめでとう</a>');
+			    //$('#custom_btn_container').append('<a href="#" id="good_count" class="counter"></a>');
+			    $('#custom_btn_container').append('<a href="#" id="btn2" class="square_btn2">🍀新郎に<br>質問する</a>');
+			    $('#custom_btn_container').append('<a href="#" id="btn4" class="square_btn4">👗新婦に<br>質問する</a>');
+			    $('#custom_btn_container').append('<a href="#" id="btn3" class="square_btn3">👏二人へ<br>メッセージ</a>');
+			    
+			    // ボタンを押した際の処理
+			    $('#btn1').on('click', function(){
+					countupCounter();
+					
+					switch(true){
+						case ($('#tempCounter').text() & ($('#tempCounter').text() - 1)) == 0:
+							//btnClickAnimation("🍀ありがとうございます🍀<br>※この画面は ある法則で表示されます<br>[おめでとうカウンター：" + $('#tempCounter').text() + "回]");
+							break;
+						case $('#tempCounter').text()==123:
+							btnClickAnimation("🍀ありがとうございます🍀<br>1月23日は新郎の誕生日です！<br>[おめでとうカウンター：" + $('#tempCounter').text() + "回]");
+							break;
+						case $('#tempCounter').text()==325:
+							btnClickAnimation("🍀ありがとうございます🍀<br>3月25日はプロポーズ記念日です！<br>[おめでとうカウンター：" + $('#tempCounter').text() + "回]");
+							break;
+						case $('#tempCounter').text()==504:
+							btnClickAnimation("🍀ありがとうございます🍀<br>本日5月4日 この良き日に<br>皆様にお会いできたことに<br>感謝いたします<br>[おめでとうカウンター：" + $('#tempCounter').text() + "回]");
+							break;
+						case $('#tempCounter').text()==522:
+							btnClickAnimation("🍀ありがとうございます🍀<br>5月22日は新婦の誕生日です！<br>[おめでとうカウンター：" + $('#tempCounter').text() + "回]");
+							break;
+						case $('#tempCounter').text()==620:
+							btnClickAnimation("🍀ありがとうございます🍀<br>6月20日は新郎新婦の勤務先の<br>富士通の創立記念日です<br>[おめでとうカウンター：" + $('#tempCounter').text() + "回]");
+							break;
+						case $('#tempCounter').text()==624:
+							btnClickAnimation("🍀ありがとうございます🍀<br>6月24日は入籍記念日です！<br>[おめでとうカウンター：" + $('#tempCounter').text() + "回]");
+							break;
+						case $('#tempCounter').text()==777:
+							btnClickAnimation("🍀ありがとうございます🍀<br>ラッキーセブン獲得です!<br>きっと幸運が訪れることでしょう<br>[おめでとうカウンター：" + $('#tempCounter').text() + "回]");
+							break;
+						case $('#tempCounter').text()==1000:
+							btnClickAnimation("🍀ありがとうございます🍀<br>1000回達成！！！！<br>ちなみに・・・<br>このカウンタの上限は9999です<br>[おめでとうカウンター：" + $('#tempCounter').text() + "回]");
+							break;
+						case $('#tempCounter').text()==1203:
+							btnClickAnimation("🍀ありがとうございます🍀<br>12月3日は初デート記念日です！<br>[おめでとうカウンター：" + $('#tempCounter').text() + "回]");
+							break;
+						case $('#tempCounter').text()==2008:
+							btnClickAnimation("🍀ありがとうございます🍀<br>2008年は新婦の入社年度です<br>[おめでとうカウンター：" + $('#tempCounter').text() + "回]");
+							break;
+						case $('#tempCounter').text()==2009:
+							btnClickAnimation("🍀ありがとうございます🍀<br>2009年は新郎の入社年度です<br>新婦の方が１年先輩ですね<br>[おめでとうカウンター：" + $('#tempCounter').text() + "回]");
+							break;
+						case $('#tempCounter').text()==3862:
+							btnClickAnimation("🍀ありがとうございます🍀<br>フォーチュンガーデン京都の番地は386-2です。<br>[おめでとうカウンター：" + $('#tempCounter').text() + "回]");
+							break;
+						case $('#tempCounter').text()==6702:
+							btnClickAnimation("🍀ありがとうございます🍀<br>6702は富士通の証券コードです。東証一部です。<br>[おめでとうカウンター：" + $('#tempCounter').text() + "回]");
+							break;
+						case $('#tempCounter').text()==8833:
+							btnClickAnimation("🍀ありがとうございます🍀<br>フォーチュンガーデン京都の<br>電話番号の下四桁は8833です<br>[おめでとうカウンター：" + $('#tempCounter').text() + "回]");
+							break;
+						case $('#tempCounter').text()==9999:
+							btnClickAnimation("🍀ありがとうございます🍀<br>9999回達成！！！！<br>このカウンタはここでお終いですが<br>新郎新婦の家庭はここから始まります<br>雨の日も 風の日も 雪の日も<br>２４時間３６５日<br>幸せな家庭を築いていきます！<br>[おめでとうカウンター：" + $('#tempCounter').text() + "回]");
+							break;
+						default:
+					}
+			    });
+			    
+			    $('#btn2').on('click', function(){
+			    	MobiAgentClient.sendMessage('[JumpKenta]','');
+			    });
+			    $('#btn3').on('click', function(){
+			    	MobiAgentClient.sendMessage('[JumpComment]','');
+			    });
+				$('#btn4').on('click', function(){
+			    	MobiAgentClient.sendMessage('[JumpMariko]','');
+			    });
+				
+				
+				getCounter();
+			    
+			});
+			
+	};
+	
+	
+		 // 初回小窓オープン時かどうかを判定
+    var hasRoom = false; // ルームがすでに存在するかどうか
+    var sendMsg = false; // 初回メッセージが送信されたかどうか
+    // 小窓画面ロード時に呼ばれるイベント
+    MobiAgentClient.on('sdkReady', function(data){
+      MobiAgentClient.on('roomReady', function(data){
+      	MobiAgentClient.toggle(true);
+      });
+	    
+      // 小窓のみリロードする場合
+      if(hasRoom && sendMsg){
+      	//showChatWindow()
+        hasRoom = false;
+        sendMsg = false;
+      }
+      else {
+        //hideChatWindow();
+      }
+      // セッションが存在した場合
+      if (data.hasRoom){
+        hasRoom = true;
+        sendMsg = false;
+      }
+    });
+		
+	
+	// チャット小窓のOpen時の処理
+	// 初めに１チャット送信しないと、カテゴリ選択が表示されないため
+	MobiAgentClient.on('openFrame', function(data2){
+		
+      	showChatWindow();
+      	// 初回Open時に送るメッセージ
+      	if(hasRoom == false || (hasRoom == true && sendMsg == false)){
+        	MobiAgentClient.sendMessage('[チャット開始]','');
+        	hasRoom = true;
+        	sendMsg = true;
+      	}
+		 });
+		 
+		 // チャット小窓のClose時の処理
+	MobiAgentClient.on('closeFrame', function(data2){
+  		hideChatWindow();
+		
+		$('#welcome').css({
+		    //'visibility': 'visible',
+		    'z-index':100000,
+		    'opacity': '1.0',
+		    'transition' : 'opacity 1s linear 0s'
+		});
+	});
+	
+	/*
+	$(function(){
+      $('#domain-id').val(localStorage.getItem('domain-id'));
+      MobiAgentClient.on('sdkReady', function(data){
+        MobiAgentClient.on('roomReady', function(data){
+          MobiAgentClient.toggle();
+        });
+        if (!data.hasRoom){
+          MobiAgentClient.sendMessage('[チャット開始]');
+        }
+      });
+      MobiAgentClient.on('closeChatView', function(data){
+        location.reload(true);
+      });
+    });	*/
+    
+	function closeRoom(){
+	    setTimeout(() => {
+	      MobiAgentClient.setReviewThenClose(5, 'ルームクローズ');
+	      setTimeout(() => {
+	        MobiAgentClient.loadOnceGuard=false;
+	        //hideChatWindow();
+	        //MobiAgentClient.toggle(false);
+	      }, 0)
+	    }, 0);
+	}
+	
+	var removeMobiContainer = function(){
+		$("#konnect-container").remove();
+		$("#custom_btn_container").remove();
+		console.log("remove mobi container");
+  	};
+  	
+	var closeSessionAndInitMobi = function(){
+		setTimeout(() => {
+			closeRoom();
+			setTimeout(() => {
+				MobiAgentClient.toggle(false);
+				removeMobiContainer();
+				setTimeout(() => {
+					startChat();
+				}, 500)
+			}, 500)
+		}, 0);
+	};
+	
+    
+</script>
+
+</body>
+</html>
